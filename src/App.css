@@ -1,0 +1,12 @@
+.PageWrapper {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 25px;
+  /* use className instead of class -- class is a protected JS word*/
+}
+
+.HeaderOneStyle {
+  font-size: 80px;
+  font-weight: normal;
+  margin: 0;
+}
