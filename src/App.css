@@ -6,8 +6,7 @@
 }
 
 .HeaderOneStyle {
-  margin: 0 auto;
-  font-size: 80px;
+  font-size: 70px;
   font-weight: normal;
 }
 
@@ -42,6 +41,7 @@
 }
 
 .ArticleCardDate {
+  margin: 10px 0 20px 5px;
 }
 
 .ArticleCardBlurb {
@@ -63,14 +63,21 @@
   max-width: 640px;
   padding: 0 25px;
 }
-
+.ArticleHeaderOneStyle{
+  margin: 0 auto;
+}
 .ArticleHeaderBlurb {
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.5;
+}
+
+.ArticleHeaderDate {
+  margin: 0;
 }
 
 .ArticleText {
   margin: 0 auto;
+  margin-top: 60px;
   max-width: 640px;
 }
 
@@ -81,8 +88,6 @@
 
 .ArticleText h2 {
   font-size: 36px;
-  margin: 0;
-  margin-bottom: 20px;
 }
 
 .ArticleText h3 {

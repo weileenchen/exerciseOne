@@ -4,6 +4,8 @@ import Data from "../components/data.json";
 
 function Article() {
   const [article, setArticle] = useState({});
+  const newDate = new Date(article.publishedDate);
+  const dateString = newDate.toDateString();
   let { id } = useParams();
 
   useEffect(() => {
@@ -13,17 +15,35 @@ function Article() {
 
   return (
     <main>
-      <section className="ArticleHeader">
+      <section
+        className="ArticleHeader"
+        style={{
+          backgroundImage: `url('${article.image && article.image.url}')`,
+          backgroundPosition: "center",
+          backgoundSize: "cover",
+        }}
+      >
         <div className="ArticleHeaderText">
-          <h1 className="HeaderOneStyle">{article.title}</h1>
-          <p className="ArticleCardDate">{article.publishedDate}</p>
+          <h1 className="HeaderOneStyle ArticleHeaderOneStyle">{article.title}</h1>
+          <p className="ArticleHeaderDate">{dateString}</p>
           <p className="ArticleHeaderBlurb">{article.blurb}</p>
         </div>
       </section>
       <section className="ArticleText">
-        {article.articleText && article.articleText.map((text, i) => {
-          return <p key={i}>{text.data}</p>
-        })}
+        {article.articleText &&
+          article.articleText.map((text, i) => {
+            const type = text.type;
+            switch (type) {
+              case "p":
+                return <p key={i}>{text.data}</p>;
+              case "h2":
+                return <h2 key={i}>{text.data}</h2>;
+              case "h3":
+                return <h3 key={i}>{text.data}</h3>;
+              default:
+                return <p key={i}>{text.data}</p>;
+            }
+          })}
       </section>
     </main>
   );
